@@ -42,4 +42,8 @@ export class RestapiServices{
         return this.http.get('http://localhost:5000/data/feeds/'+data.user_id+'/'+data.offset);
     }
 
+    increaseLikeCount(data):Observable<any>{
+        return this.http.post('http://localhost:5000/tweet/like',data);
+    }
+
 }

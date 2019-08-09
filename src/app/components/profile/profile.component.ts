@@ -17,6 +17,23 @@ export class ProfileComponent {
 
     }
 
+    increaseLike(tweet_id){  //likes will be increased 
+        console.log(tweet_id);
+        this.rest.increaseLikeCount({tweetId:tweet_id,userId:this.user_id}).subscribe(
+            data => console.log(data),
+            err => {console.log(err)}
+        );
+       
+    }
+
+    increaseComment(tweet_id){
+        console.log(tweet_id);
+    }
+
+    increaseShare(tweet_id){
+        console.log(tweet_id);
+    }
+
     ngOnInit(): void {
         this.rest.getInfo(this.user_id).subscribe(  //getting the user personal details
             data => {
@@ -29,7 +46,7 @@ export class ProfileComponent {
         );
         
         this.rest.getUserTweetMsg(this.user_id).subscribe(
-            data=>{console.log(data); this.user_tweets = data},
+            data=>{console.log(data); this.user_tweets = data },
             err=>{ console.log(err)}
         );
 

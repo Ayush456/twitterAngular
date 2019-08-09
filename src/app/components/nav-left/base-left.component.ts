@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector : 'base-left',
@@ -16,11 +17,21 @@ import { Component } from '@angular/core';
    <li><button> <i class="glyphicon glyphicon-list-alt"></i> Your Tweets </button></li>
    <li><button routerLink="./../home/profile"> <i class="glyphicon glyphicon-user"></i> Profile</button></li>
    <li><button> <i class="glyphicon glyphicon-th-large"></i>More</button></li>
-   <button class="btn-tweet" routerLink="./../home">Tweet</button>
+   <button class="btn-tweet" routerLink="./../home">Tweet</button> <br><br>
+   <button class="btn-tweet" (click)="doLogout()">logout</button>
 </ul> 
 </div>`,
 styleUrls : ['./base-left.component.css']
 })
 export class BaseLeftComponent{
     
+    constructor(private router: Router){
+        
+    }
+    
+    doLogout(){
+        localStorage.clear();
+        this.router.navigate(['/login']);
+    }
+
 }

@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
         </div>
     </div>
     <div class="col-md-5" id="home" style="padding: 0; margin:0">
-        <div class="card">
+        <div class="card shadow">
             <div class="errors">Your username or password is invalid</div>
             <article class="card-body ">
 
@@ -21,7 +21,7 @@ import { Router} from '@angular/router';
                 <div class="form-group">
                     <label>Your email</label>
                     <div>
-                        <input name="email" [(ngModel)]="user_email" class="form-control" placeholder="Email" type="text" id="email"><i
+                            <input name="email" [(ngModel)]="user_email" class="form-control" placeholder="Email" type="text" id="email"><i
                             class="glyphicon glyphicon-ok" style="display: none; float:right;" id="user_glyp"></i>
                     </div>
                     <p id="no-email" style="display:none">Your email is empty</p>
@@ -34,6 +34,7 @@ import { Router} from '@angular/router';
                         id="pass_glyp"></i>
                     <p id="no-password" style="display:none ">your password is empty</p>
                 </div> <!-- form-group// -->
+                 
                 <div class="form-group-check">
                     <div class="checkbox">
                         <label> <input type="checkbox">

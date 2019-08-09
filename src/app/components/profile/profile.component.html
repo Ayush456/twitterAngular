@@ -20,14 +20,14 @@
 
 <div class="your_tweets">
    <h4 style=" margin-top:12px;font-size: 17px;font-weight: bold">Your Tweets</h4>
-    <div id="tw-card" style="margin-bottom: 8px; overflow: auto" class="card shadow-sm" *ngFor="let item of user_tweets">
+    <div id="tw-card" style="margin-bottom: 8px; overflow: auto" class="card shadow" *ngFor="let item of user_tweets">
         <ul style="list-style-type:none ">
             <li style="width:100%; margin-top: 5px; "><span style="color: #212F3D; font-size: 12px; font-weight: bold">TweetMsg : &nbsp;</span> <span style="font-size: 12px">{{item?.tweet_msg}}</span> </li>
-            <li><i class="glyphicon glyphicon-thumbs-up"></i> {{item?.tweet_like_count}} &nbsp; 
-                <i class="glyphicon glyphicon-comment"></i> {{item?.tweet_comment_count}} &nbsp;
-                <i class="glyphicon glyphicon-share"></i> {{item?.tweet_retweet_count}}
+            <li> <button class="btn-like" (click)="increaseLike( item.tweet_id )" ><i class="glyphicon glyphicon-thumbs-up"></i></button>  {{item?.tweet_like_count}} &nbsp; &nbsp; 
+                 <button class="btn-comment" (click)="increaseComment( item.tweet_id)"  ><i class="glyphicon glyphicon-comment"></i></button>  {{item?.tweet_comment_count}} &nbsp; &nbsp; 
+                 <button class="btn-share" (click)="increaseShare(item.tweet_id)"    ><i class="glyphicon glyphicon-share"></i></button>  {{item?.tweet_retweet_count}}
             </li>
-            <li>atTime : {{item?.atTime}}</li>
+            <li> <span style="font-weight:bold">atTime :</span>  {{item?.atTime}}</li>
         </ul>
     </div>
 </div>

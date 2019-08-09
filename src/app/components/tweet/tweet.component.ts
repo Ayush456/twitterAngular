@@ -14,7 +14,15 @@ export class TweetComponent {
     follower_tweets:any;
     tweet_msg:string;
     constructor(private toastr: ToastrService, private rest: RestapiServices){
+        
+    }
 
+    increaseLike(tweet_id){  //likes will be increased 
+        console.log(tweet_id);
+        this.rest.increaseLikeCount({tweetId:tweet_id,userId:this.user_id}).subscribe(
+            data => console.log(data),
+            err => {console.log(err)}
+        ); 
     }
 
     submitTweet(){
@@ -25,7 +33,10 @@ export class TweetComponent {
         };
 
        this.rest.saveTweet( tweetObj ).subscribe(
-        data => { console.log("Your Tweet Msg Inserted!")},
+        data => { 
+            console.log("Your Tweet Msg Inserted!");
+            this.tweet_msg = '';
+        },
         err=>{console.log(err)}
        );
     }
@@ -34,7 +45,7 @@ export class TweetComponent {
         this.rest.getFeeds(this.user_id,0).subscribe(
             data => {
                 this.follower_tweets = data.tweets;
-                console.log(data.tweets);
+                console.log(this.follower_tweets);
             },
             err =>{ console.log(err); }
         );

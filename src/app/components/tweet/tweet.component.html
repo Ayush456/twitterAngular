@@ -28,11 +28,11 @@
              <li><p id="tm_text">{{tweet.tweetText}}</p></li>
           </ul>  
           <ul id="lcs">
-              <li><p id=""><button><i class="glyphicon glyphicon-thumbs-up"></i></button>({{tweet.likes}}) &nbsp;&nbsp; &nbsp;</p></li>
+              <li><p id=""><button (click)=" increaseLike( tweet.tweetId )"><i class="glyphicon glyphicon-thumbs-up"></i></button>({{tweet.likes}}) &nbsp;&nbsp; &nbsp;</p></li>
               <li><p id=""><button><i class="glyphicon glyphicon-comment"></i></button>({{tweet.comments}}) &nbsp;&nbsp; &nbsp;</p></li>
               <li><p id=""><button><i class="glyphicon glyphicon-share"></i></button>({{tweet.retweets}})</p></li>
+              <li><p style="font-size: 12px; color: teal"> Date: {{tweet.atTime.substring(0,10)}} </p></li>
           </ul>
-          
         </div>
         
     </div>

@@ -64,3 +64,15 @@ h5{
     width: inherit;
     border: 0px;
 }
+
+#tw-card{
+    transition: transform 1s linear;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 8px;
+}
+
+#tw-card:hover{
+    transform: scale(1.1) ; 
+}

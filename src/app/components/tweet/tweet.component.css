@@ -19,6 +19,7 @@
 
 #text_tweets {
     padding-left: 10px;
+    font-size: 13px;
 }
 
 .tweet-bottom {
@@ -63,10 +64,15 @@
 
 #home_tweets{
     margin-bottom: 15px;
-    border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 25px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     overflow: auto;
+    transition: transform 1s ease-out;
+}
+
+#home_tweets:hover{
+    transform: scale(1.1) ;
 }
 
 #user_handle{
@@ -115,6 +121,10 @@
 
 #lcs li{
     float: left;
+}
+#lcs li:last-child{
+    float: right;
+    margin-right: 20px;
 }
 
 #lcs li p button{

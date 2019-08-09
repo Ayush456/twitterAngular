@@ -46,4 +46,10 @@ export class RestapiServices{
         return this.http.post('http://localhost:5000/tweet/like',data);
     }
 
+    getFeeds(user_id,offset):Observable<any>{
+        let data:Object = {userId:user_id};
+        return this.http.get('http://localhost:5000/data/feeds/'+user_id+"/"+offset, data );
+    }
+
+
 }

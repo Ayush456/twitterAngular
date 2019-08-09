@@ -60,3 +60,73 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+#home_tweets{
+    margin-bottom: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: auto;
+}
+
+#user_handle{
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#tw{
+    margin: 0;
+    padding: 0;
+}
+
+#tweet_title_msg{
+    list-style-type: none;
+    float: left;
+    margin-left: 15px;
+    padding: 0;
+    margin-top: 0;
+}
+#tweet_title_msg li{
+    float: left;
+}
+
+#tm_title{
+    font-weight: bold;
+    font-size: 12px;
+    color:#A93226  ;
+}
+
+#tm_text{
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #212F3C;
+    overflow: auto;
+}
+
+#lcs{
+    list-style-type: none;
+    margin-top: 38px;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#lcs li{
+    float: left;
+}
+
+#lcs li p button{
+    border: none;
+}
+
+#lcs li p button i{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+#lcs li p{
+    font-size: 15px;
+}

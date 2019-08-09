@@ -17,5 +17,23 @@
       </div>
     </div>
   </div>
-  
-  <div id="displayTweets"></div>
+
+  <div id="displayTweets">
+    <h4 style="margin-top: 13px; opacity: 1.0; font-weight: bold;margin-bottom: 15px;"> Your Feeds </h4>
+    <div id="home_tweets" class="card shadow" *ngFor="let tweet of follower_tweets">
+        <p id="user_handle">@{{tweet.userName}}</p>
+        <div id="tw">
+          <ul id="tweet_title_msg">
+             <li><p id="tm_title">Tweet Msg : &nbsp;</p></li>
+             <li><p id="tm_text">{{tweet.tweetText}}</p></li>
+          </ul>  
+          <ul id="lcs">
+              <li><p id=""><button><i class="glyphicon glyphicon-thumbs-up"></i></button>({{tweet.likes}}) &nbsp;&nbsp; &nbsp;</p></li>
+              <li><p id=""><button><i class="glyphicon glyphicon-comment"></i></button>({{tweet.comments}}) &nbsp;&nbsp; &nbsp;</p></li>
+              <li><p id=""><button><i class="glyphicon glyphicon-share"></i></button>({{tweet.retweets}})</p></li>
+          </ul>
+          
+        </div>
+        
+    </div>
+  </div>

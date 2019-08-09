@@ -4,7 +4,11 @@ import { Router } from '@angular/router';
 @Component({
     selector : 'base-left',
     template: `<div class="logo-pack">
-    <img id="logo" src="https://img.icons8.com/color/48/000000/twitter.png"> 
+    <ul>
+        <li><img id="logo" src="https://img.icons8.com/color/48/000000/twitter.png"> </li>
+        <li>Hello <span style="color:#EC7063 "> &nbsp; {{userName}} !</span> </li>
+    </ul>
+
     
 </div>
 <div class="vertical-nav-left">
@@ -24,7 +28,7 @@ import { Router } from '@angular/router';
 styleUrls : ['./base-left.component.css']
 })
 export class BaseLeftComponent{
-    
+    userName:string;
     constructor(private router: Router){
         
     }
@@ -32,6 +36,10 @@ export class BaseLeftComponent{
     doLogout(){
         localStorage.clear();
         this.router.navigate(['/login']);
+    }
+
+    ngOnInit(): void {
+        this.userName = localStorage.getItem('user_name');
     }
 
 }

@@ -1,0 +1,85 @@
+
+.logo-pack{
+  margin-left: 10px;
+  margin-top:10px; 
+  position: fixed;
+  top: 0px;
+  left: 10; 
+}
+
+#login-btn{
+    width: 50%;
+    text-align: center;
+    margin-left: 27%;
+}
+.vertical-nav-left{
+    width: 30%;
+    height: 90vh;
+    position: fixed;
+    top: 100px;
+    margin-left: 50px;
+}
+
+#logo{
+  margin-left: 20px;
+  margin-top: 20px;
+  transition: transform 3s;
+  
+}
+
+#logo:hover{
+  transform: scale(1.5);
+}
+
+.logo-pack p{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 400;
+  position:absolute;
+  top: 32px;
+  left: 60px;
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+}
+.vertical-nav-left ul{
+list-style-type:none; 
+}
+
+.vertical-nav-left ul li button{
+  background-color:transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none; 
+  font-size: 21px;
+  font-weight: bold;
+  
+}
+
+.vertical-nav-left ul li button i{
+  margin-right: 10px;
+}
+
+.vertical-nav-left ul li{
+  margin-bottom: 22px;
+}
+
+.active{
+  color: #5DADE2 ;
+  font-weight: bold;
+}
+
+.btn-tweet{
+    border-radius: 25px;
+    height: 50px;
+    width: 150px;
+    background: #3498DB;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+  }
+  
+  .btn-tweet:hover{
+    background: #2E86C1;
+  }

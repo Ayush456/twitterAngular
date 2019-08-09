@@ -1,0 +1,61 @@
+.card{
+    margin-top:15vh; 
+    margin-left: 10vh;   
+}
+.logo-pack{
+   margin-left: 10px;
+   margin-top:10px; 
+}
+
+#login-btn{
+    width: 50%;
+    text-align: center;
+    margin-left: 27%;
+}
+.vertical-nav-left{
+    width: 30%;
+    height: 90vh;
+    position: fixed;
+    top: 100px;
+    margin-left: 50px;
+}
+
+#logo{
+  margin-left: 20px;
+  margin-top: 10px;
+  transition: transform 3s;
+}
+
+#logo:hover{
+  transform: scale(1.5);
+}
+
+.logo-pack p{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 400;
+  position:absolute;
+  top: 32px;
+  left: 60px;
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+.errors{
+    text-align: center;
+    display: none;
+}
+
+.form-group-check .checkbox label {
+    width: 150px;
+}
+.form-group-check .checkbox label input[type=checkbox]{
+    margin-top: 5px;
+    float: left;
+}
+.form-group-check .checkbox label p{
+    float: right;
+}
+label{
+    font-weight: bold;
+}

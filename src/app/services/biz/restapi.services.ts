@@ -53,5 +53,12 @@ export class RestapiServices{
         return this.http.get('http://localhost:5000/data/feeds/'+user_id+"/"+offset+"/"+offset, data );
     }
 
+    updateProfile(user_data):Observable<any>{
+
+        return this.http.post('http://localhost:5000/user/edit_profile', user_data);
+
+    }
+
+
 
 }

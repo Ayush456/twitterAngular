@@ -13,7 +13,7 @@ export class ProfileComponent {
     user_id = localStorage.getItem('user_id');
     user_tweets:Object;
 
-    constructor(private rest: RestapiServices, private http: HttpClient) {
+    constructor(private rest: RestapiServices, private http: HttpClient, private router: Router) {
 
     }
 
@@ -32,6 +32,10 @@ export class ProfileComponent {
 
     increaseShare(tweet_id){
         console.log(tweet_id);
+    }
+
+    editProfile(){
+    this.router.navigate(['/edit']);
     }
 
     ngOnInit(): void {

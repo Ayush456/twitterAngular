@@ -1,3 +1,5 @@
+import { EditProfileComponent } from './components/edit/edit-profile.component';
+
 import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +23,7 @@ import { ToastrModule } from 'ngx-toastr';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'edit' , component : EditProfileComponent },
   {
     path: 'home', component: HomeComponent,
     children: [
@@ -42,7 +45,8 @@ const routes: Routes = [
     PageNotFoundComponent,
     HomeComponent,
     TweetComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     CommonModule,

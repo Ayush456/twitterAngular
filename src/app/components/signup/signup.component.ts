@@ -6,11 +6,11 @@ import { Router} from '@angular/router';
     selector: 'app-root',
     template: ` 
     <div class='row'>
-        <div class='col-md-4'></div> 
-        <div class='col-md-4'>
+        <div class='col-md-3'></div> 
+        <div class='col-md-6'>
         <div class="card" style="margin-top:10vh;">
         <article class="card-body">
-            <a href="" class="float-right btn btn-outline-primary" routerLink="./../login">Log In</a>
+            <a href="" style="height:40px;width:70px;font-size" class="float-right btn btn-outline-primary" routerLink="./../login">Log In</a>
             <h4 class="card-title mb-4 mt-1">Sign Up</h4>
             <form>
                 <div class="form-group">
@@ -44,13 +44,13 @@ import { Router} from '@angular/router';
                 </div>
     
                 <div class="form-group">
-                    <button type="button" (click)="doSignup()" class="btn btn-primary btn-block" id="sign-up"> Sign Up </button>
+                    <button type="button" (click)="doSignup()" class="btn btn-primary" id="sign-up"> Sign Up </button>
                 </div>
             </form>
         </article>
     </div>
         </div> 
-        <div class='col-md-4'></div> 
+        <div class='col-md-3'></div> 
     </div>
 
    `,

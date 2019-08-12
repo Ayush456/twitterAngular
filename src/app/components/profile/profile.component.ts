@@ -38,6 +38,11 @@ export class ProfileComponent {
     this.router.navigate(['/edit']);
     }
 
+
+    addFollowers(){
+        this.router.navigate(['/home/follow']);
+    }
+
     ngOnInit(): void {
         this.rest.getInfo(this.user_id).subscribe(  //getting the user personal details
             data => {

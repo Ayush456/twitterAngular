@@ -1,3 +1,4 @@
+import { FollowComponent } from './components/follow/follow.component';
 import { EditProfileComponent } from './components/edit/edit-profile.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,
     children: [
       { path: '', component: TweetComponent },
-      { path: 'profile', component: ProfileComponent }
+      { path: 'profile', component: ProfileComponent },
+      { path: 'follow', component:FollowComponent}
     ]
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -46,7 +48,8 @@ const routes: Routes = [
     HomeComponent,
     TweetComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    FollowComponent
   ],
   imports: [
     CommonModule,

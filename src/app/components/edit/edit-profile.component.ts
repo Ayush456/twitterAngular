@@ -61,10 +61,7 @@ export class EditProfileComponent {
                     console.log(error);
                 }
             );
-
         }
-
-
     }
 
     ngOnInit(): void {

@@ -63,5 +63,12 @@ export class RestapiServices{
         return this.http.post('http://localhost:5000/user/edit_p',user);
     }
 
+    getAllUsers(user_name):Observable<any>{
+        return this.http.post('http://localhost:5000/search/users',user_name);
+    }
+
+    followSomeOne(users):Observable<any>{
+        return this.http.post('http://localhost:500/user/follow',users);
+    }
 
 }

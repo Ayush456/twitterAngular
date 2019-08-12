@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
     
 </div>
-<div class="vertical-nav-left" (click)="changeActive(event)" id='navi-bar'>
+<div class="vertical-nav-left"  id='navi-bar'>
 <ul>
    <li><button class="active" routerLink="./../home"> <i class="glyphicon glyphicon-home"></i> Home</button> </li>
    <li><button> <i class="glyphicon glyphicon-road"></i> Explore</button></li>
@@ -33,11 +33,11 @@ export class BaseLeftComponent{
         
     }
 
-    changeActive(event){
-        let uls_par = document.getElementById('navi-bar');
-        let uls = uls_par.getElementsByTagName('ul');
-        console.log(event.target);
-    }
+    // changeActive(event){
+    //     let uls_par = document.getElementById('navi-bar');
+    //     let uls = uls_par.getElementsByTagName('ul');
+    //     console.log(event.target);
+    // }
     
     doLogout(){
         localStorage.clear();

@@ -59,6 +59,9 @@ export class RestapiServices{
 
     }
 
+    edit_p(user):Observable<any>{
+        return this.http.post('http://localhost:5000/user/edit_p',user);
+    }
 
 
 }

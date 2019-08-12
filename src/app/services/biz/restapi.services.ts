@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient,HttpParams } from '@angular/common/http';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 @Injectable({
     providedIn : 'root',
 })
@@ -48,7 +49,8 @@ export class RestapiServices{
 
     getFeeds(user_id,offset):Observable<any>{
         let data:Object = {userId:user_id};
-        return this.http.get('http://localhost:5000/data/feeds/'+user_id+"/"+offset, data );
+        console.log('http://localhost:5000/data/feeds/'+user_id+"/"+offset+"/"+offset);
+        return this.http.get('http://localhost:5000/data/feeds/'+user_id+"/"+offset+"/"+offset, data );
     }
 
 

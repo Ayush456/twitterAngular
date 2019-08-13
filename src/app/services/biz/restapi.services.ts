@@ -32,7 +32,7 @@ export class RestapiServices{
     }
 
     searchTwitter(search_text):Observable<any>{
-        return this.http.get('http://localhost:5000/search',search_text);
+        return this.http.post('http://localhost:5000/search',search_text);
     }
 
     getUserTweetMsg(user_id):Observable<any>{
@@ -53,6 +53,12 @@ export class RestapiServices{
         return this.http.get('http://localhost:5000/data/feeds/'+user_id+"/"+offset+"/"+offset, data );
     }
 
+<<<<<<< HEAD
+    getTrends(offset):Observable<any> {
+        return this.http.get('http://localhost:5000/data/trends/'+offset);
+    }
+
+=======
     updateProfile(user_data):Observable<any>{
 
         return this.http.post('http://localhost:5000/user/edit_profile', user_data);
@@ -71,5 +77,6 @@ export class RestapiServices{
         console.log(user);
         return this.http.post('http://localhost:5000/user/follow',user);
     }
+>>>>>>> 8c7efdf2c0aa681fab51f81cb373937b8ffba982
 
 }

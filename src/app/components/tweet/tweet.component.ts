@@ -25,7 +25,7 @@ export class TweetComponent {
         ); 
     }
 
-    submitTweet(){
+    submitTweet() {
        this.toastr.success(this.tweet_msg, '');
        let tweetObj = {
         userId : localStorage.getItem('user_id'),
@@ -43,13 +43,11 @@ export class TweetComponent {
 
     ngOnInit(): void {
         this.rest.getFeeds(this.user_id,0).subscribe(
-            data => {
-                
+            data => {  
                 this.follower_tweets = data.feeds;
                 console.log(this.follower_tweets);
             },
             err =>{ console.log(err); }
         );
     }
-
 }

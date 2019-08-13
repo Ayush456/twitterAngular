@@ -11,8 +11,14 @@ import { Router } from '@angular/router';
     </div>
 
     <div class="trendsforyou">
-        <p class="trendstTitle">Trends for you</p>
+        <p class="trendstTitle">Trending</p>
+        <div class="trendsHolder">
+            <div class="trendsContainer" *ngFor = "let trend of trends">
+                <ul style="list-style-type:none"><li><div class="trend"><div class="trendHashtag">#{{ trend?.hashtag }}</div><div class="trendCount">{{ trend?.count }}</div></div></li></ul>
+            </div>
+        </div>
     </div>
+
     <div class="whotofollow">
         <p class="whoTitle">Who to follow</p>
     </div>
@@ -26,10 +32,12 @@ import { Router } from '@angular/router';
 })
 export class BaseRightComponent {
     search_text:string;
+    trends:any;
     constructor(private rest: RestapiServices, private router: Router) {
-
     }
-    searchFunc(){
+
+
+    searchFunc() {
         console.log({key:this.search_text,offset:0});
         this.rest.searchTwitter({key:this.search_text,offset:0}).subscribe(
             data=>{
@@ -40,5 +48,13 @@ export class BaseRightComponent {
             } 
         );
     }
+
+    ngOnInit(): void {
+        this.rest.getTrends(0).subscribe(
+            data => this.trends = data ,
+            err => console.log(err)
+        );
+    }
+    
 
 }

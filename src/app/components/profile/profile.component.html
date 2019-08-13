@@ -6,12 +6,12 @@
     <div class="name-id">
         <ul class="HNB">
             <li>HashTag : <span class="li_col"><b>{{user?.userId}}</b></span></li>
-            <li>Name : <span class="li_col"><b>{{user?.userName}}</b></span> </li>
-            <li>Bio : <span class="li_col"><b>{{user?.status || 'Null'}}</b></span>   </li>
-            <li>Birth date : <span class="li_col"><b>{{user?.dob}} </b></span>  </li>
+            <li>Name &nbsp; &nbsp; &nbsp; : <span class="li_col"><b>{{user?.userName}}</b></span> </li>
+            <li>Bio &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: <span class="li_col"><b>{{user?.status || 'Null'}}</b></span>   </li>
+            <li>Birth date :<span class="li_col"><b>{{user?.dob}} </b></span>  </li>
         </ul>
         <ul class="ff_desc">
-            <li>following ({{user?.followCount}} )  </li>
+            <li>following ( {{user?.followCount}} )  </li>
             <li>followers ( {{user?.followerCount}} ) </li>
             <li>Tweets ( {{user?.tweetCount}} ) </li>
             <li><Button (click)="editProfile()" style="border: 0; margin: 0px; padding: 0px;color: #212F3C;font-weight: bold">Edit Profile <i class="glyphicon glyphicon-pencil" style="margin: 0;padding:0;"></i></Button></li>

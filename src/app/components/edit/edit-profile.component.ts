@@ -48,6 +48,7 @@ export class EditProfileComponent {
             console.log(new_formated_date);
             
             let body2 ={
+                userId: user_id,
                 user_status : this.user_status,
                 user_dob : new_formated_date,
                 user_email : this.user_email

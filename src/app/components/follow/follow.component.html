@@ -1,11 +1,11 @@
 <div id="follow_group">
     <h3>Enter Name to follow</h3>
-    <input type="text" id="follow_name" [(ngModel)]="follow_name">
+    <input id="search_follow" type="text" id="follow_name" [(ngModel)]="follow_name">
     <br>
     <button (click)="findFollow()">Find</button>
 </div>
 <div class="follow-list">
-    <h3>here are followers Search result</h3>
+    <h3>Here are followers Search result</h3>
     
     <div class="card" id="follow-card" *ngFor="let item of follow_list_result">
         <ul>

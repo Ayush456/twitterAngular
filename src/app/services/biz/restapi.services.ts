@@ -67,8 +67,9 @@ export class RestapiServices{
         return this.http.post('http://localhost:5000/search/users',user_name);
     }
 
-    followSomeOne(users):Observable<any>{
-        return this.http.post('http://localhost:500/user/follow',users);
+    followSomeOne(user):Observable<any>{
+        console.log(user);
+        return this.http.post('http://localhost:5000/user/follow',user);
     }
 
 }

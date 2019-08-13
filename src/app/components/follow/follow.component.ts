@@ -16,13 +16,15 @@ export class FollowComponent{
     }
 
     addToFollow(user_follow_id){
-        this.rest.followSomeOne({userOne:this.my_id,userTwo:user_follow_id}).subscribe(
-            data=>{
-                console.log(data);
-            },
-            err=>{
-                console.log(err);
-            }
+        console.log(this.my_id+"  "+user_follow_id);
+        let body ={
+            userOne: this.my_id,
+            userTwo: user_follow_id,
+        }
+    
+        this.rest.followSomeOne(body).subscribe(
+            data =>{console.log(data);},
+            err =>{ console.log(err);}
         );
     }
 

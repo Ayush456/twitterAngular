@@ -61,10 +61,6 @@ export class RestapiServices{
         return this.http.post('http://localhost:5000/user/edit_profile', user_data);
     }
 
-    edit_p(user):Observable<any>{
-        return this.http.post('http://localhost:5000/user/edit_p',user);
-    }
-
     getAllUsers(user_name):Observable<any>{
         return this.http.post('http://localhost:5000/search/users',user_name);
     }

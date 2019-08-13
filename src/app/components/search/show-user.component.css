@@ -1,0 +1,28 @@
+#head_text{
+    margin-top: 20px;
+}
+#card_show_user{
+    margin-top: 30px;
+}
+
+#card_show_user ul{
+    list-style-type: none;
+    margin-bottom: 5px; 
+    padding: 0;
+    margin-left: 25px;
+}
+
+#card_show_user ul li{
+    float: left;
+}
+
+#card_show_user ul li:first-child p{
+    font-size: 15px;
+    font-weight: bold;
+    width: 100px;
+    overflow: hidden;
+}
+
+#card_show_user ul li p{
+    font-size: 15px;
+}

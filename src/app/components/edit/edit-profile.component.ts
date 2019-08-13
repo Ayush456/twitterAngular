@@ -55,6 +55,7 @@ export class EditProfileComponent {
             }
             this.rest.edit_p(body2).subscribe(
                 data => {
+                    localStorage.setItem('user_email', this.user_email);
                     console.log(data);
                     this.router.navigate(['/home']);
                 },

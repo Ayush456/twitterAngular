@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
 import { RestapiServices } from 'src/app/services/biz/restapi.services';
 import { Router } from '@angular/router';
+import $ from 'jquery';
 
 @Component({
     selector: 'base-right',
     template: `
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <div class="nav-right">
     <div class="search-bar">
-        <input type="text" [(ngModel)]="search_text" placeholder=" &nbsp; &nbsp;Search Twitter.." (keydown)="searchFunc()" >
+        <input type="text" [(ngModel)]="search_text" placeholder=" &nbsp; &nbsp;Search Twitter.." (keyup)="searchFunc()" >
+        <div class="search_list">
+           <ul style="list-style-type:none;">
+            <li *ngFor="let s of search_result"> <button style="border:0" (click)="openProfile( s.user_id )" > {{s.user_name}} </button> </li>
+           </ul> 
+        </div>          
     </div>
 
     <div class="trendsforyou">
@@ -15,7 +25,8 @@ import { Router } from '@angular/router';
         <div class="trendsHolder">
             <div class="trendsContainer" *ngFor = "let trend of trends">
                 <ul style="list-style-type:none"><li><div class="trend"><div class="trendHashtag">#{{ trend?.hashtag }}</div><div class="trendCount">{{ trend?.count }}</div></div></li></ul>
-            </div>
+                     
+           </div>
         </div>
     </div>
 
@@ -31,30 +42,47 @@ import { Router } from '@angular/router';
     styleUrls: ['./base-right.component.css']
 })
 export class BaseRightComponent {
-    search_text:string;
-    trends:any;
+    search_text: string;
+    search_result:any;
+    trends: any;
+    html: string = "";
     constructor(private rest: RestapiServices, private router: Router) {
     }
 
+    openProfile(user_id){
+        console.log(user_id);
+        this.router.navigate(['/home/show/'+user_id]);
+    }
 
     searchFunc() {
-        console.log({key:this.search_text,offset:0});
-        this.rest.searchTwitter({key:this.search_text,offset:0}).subscribe(
-            data=>{
-                console.log(data);
-            },
-            err=>{
-                console.log(err);
-            } 
-        );
+
+        let body = {
+            key: this.search_text,
+            offset: 0
+        }
+
+        if (this.search_text !== "") {
+            this.rest.getAllUsers({ user_name: this.search_text }).subscribe(
+              
+                data => {
+                    this.search_result = data;
+                    console.log(data);
+                },
+                err => {
+                    console.log(err);
+                }
+            );
+        }
+
+        if(this.search_text === ""){
+            $('.search_list').html("");
+        }
     }
 
     ngOnInit(): void {
         this.rest.getTrends(0).subscribe(
-            data => this.trends = data ,
+            data => this.trends = data,
             err => console.log(err)
         );
     }
-    
-
 }

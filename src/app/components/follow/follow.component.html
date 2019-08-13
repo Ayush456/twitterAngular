@@ -1,0 +1,20 @@
+<div id="follow_group">
+    <h3>Enter Name to follow</h3>
+    <input id="search_follow" type="text" id="follow_name" [(ngModel)]="follow_name">
+    <br>
+    <button (click)="findFollow()">Find</button>
+</div>
+<div class="follow-list">
+    <h3>Here are followers Search result</h3>
+    
+    <div class="card" id="follow-card" *ngFor="let item of follow_list_result">
+        <ul>
+            <li>Name : {{item.user_name}}</li>
+            <li>User Id:{{item.user_id}}</li>
+            <br>
+            <li><button value="{{item.user_id}}" (click)="addToFollow( item.user_id )">Follow</button></li>
+        </ul>
+    </div>
+   
+
+</div>

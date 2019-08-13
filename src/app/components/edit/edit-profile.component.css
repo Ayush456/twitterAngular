@@ -1,0 +1,35 @@
+#editCard{
+    margin-top:10vh; 
+}
+
+#editCard article .form-group:last-child{
+    margin-bottom: 10px;
+}
+
+.form-group{
+    height: 55px;
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    font-size: 14px;
+}
+
+.form-group input{
+    height: 35px;
+}
+
+.form-group input::placeholder{
+    font-size: 14px;
+}
+
+#btn-submit{
+    height: 35px;
+    font-size: 15px;
+}
+
+.form-group button{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}

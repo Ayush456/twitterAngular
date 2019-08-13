@@ -15,7 +15,7 @@ import { Router} from '@angular/router';
             <div class="errors">Your username or password is invalid</div>
             <article class="card-body ">
 
-                <button id="btn-signup" href="" class="float-right btn btn-outline-primary" routerLink='./../signup'>Sign up</button>
+                <button (click)="goToSignup()" style="float:right;width:70px;height:30px; background:none; border-color:#097FEC; color: #097FEC ;font-size:15px">Signup</button>
                 <h4 class="card-title mb-4 mt-1">Sign in</h4>
 
                 <div class="form-group">
@@ -60,6 +60,11 @@ export class LoginComponent {
 
     constructor(private rest: RestapiServices, private router: Router) {
 
+    }
+
+    goToSignup(){
+        console.log('Sofhhah');
+        this.router.navigate(['signup']);
     }
 
     getLogin() {

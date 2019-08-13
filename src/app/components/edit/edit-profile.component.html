@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+      <div class="card" style="width:100%" id="editCard">
+        <article class="card-body shadow">
+
+          <h3 class="card-title mb-4 mt-1">Edit Your Profile Details</h3>
+
+          <div class="form-group">
+            <label>Your DOB</label>
+            <input name="user_dob" [(ngModel)]="user_dob" class="form-control"  data-date-format="MMMM DD YYYY" min="1950-12-31" placeholder="Date Of Birth" type="date">
+          </div>
+
+          <div class="form-group">
+                <label>Add/Change Status</label>
+                <input name="user_status" [(ngModel)]="user_status" value="{{user_status}}" class="form-control" placeholder="Howdy Da!" type="text">
+          </div>
+
+          <div class="form-group">
+                <label>Change Email</label>
+                <input name="user_email" [(ngModel)]="user_email" value="{{user_email}}" class="form-control"  placeholder="xyz@gmail.com" type="text">
+          </div>
+        
+        
+          <div class="form-group">
+            <br>
+            <button type="button" value="{{user_id}}" id="btn-submit" class="btn btn-primary btn-block" (click)="doEditChanges( user_id )"> Save Changes </button>
+          </div> <!-- form-group// -->
+
+        </article>
+      </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>

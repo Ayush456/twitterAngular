@@ -43,7 +43,11 @@ export class TweetComponent {
 
     ngOnInit(): void {
         this.rest.getFeeds(this.user_id,0).subscribe(
+<<<<<<< HEAD
             data => {  
+=======
+            data => {                
+>>>>>>> 8c7efdf2c0aa681fab51f81cb373937b8ffba982
                 this.follower_tweets = data.feeds;
                 console.log(this.follower_tweets);
             },

@@ -53,9 +53,30 @@ export class RestapiServices{
         return this.http.get('http://localhost:5000/data/feeds/'+user_id+"/"+offset+"/"+offset, data );
     }
 
+<<<<<<< HEAD
     getTrends(offset):Observable<any> {
         return this.http.get('http://localhost:5000/data/trends/'+offset);
     }
 
+=======
+    updateProfile(user_data):Observable<any>{
+
+        return this.http.post('http://localhost:5000/user/edit_profile', user_data);
+
+    }
+
+    edit_p(user):Observable<any>{
+        return this.http.post('http://localhost:5000/user/edit_p',user);
+    }
+
+    getAllUsers(user_name):Observable<any>{
+        return this.http.post('http://localhost:5000/search/users',user_name);
+    }
+
+    followSomeOne(user):Observable<any>{
+        console.log(user);
+        return this.http.post('http://localhost:5000/user/follow',user);
+    }
+>>>>>>> 8c7efdf2c0aa681fab51f81cb373937b8ffba982
 
 }

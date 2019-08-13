@@ -76,3 +76,10 @@ h5{
 #tw-card:hover{
     transform: scale(1.1) ; 
 }
+
+.edit-button {
+    position : absolute;
+    top : 60%;
+    left : 90%;
+    z-index: 10;
+}

@@ -29,7 +29,7 @@ export class EditProfileComponent {
             userEmail: this.user_email,
             userDob: this.user_dob
         }
-
+        console.log("body "+body);
         if(this.user_dob){
             console.log(this.user_dob);
             this.rest.updateProfile(body).subscribe(

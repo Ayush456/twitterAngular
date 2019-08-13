@@ -82,6 +82,7 @@ export class LoginComponent {
                     localStorage.setItem('user_email', data.user_email);
                     localStorage.setItem('user_password', data.user_password);
                     localStorage.setItem('user_name', data.user_name);
+                    // localStorage.setItem('user_pp',data.)
                     this.router.navigate(['/home']);
                 }
             },

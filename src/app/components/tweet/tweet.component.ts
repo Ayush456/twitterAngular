@@ -19,6 +19,7 @@ export class TweetComponent {
 
     increaseLike(tweet_id){  //likes will be increased 
         console.log(tweet_id);
+        console.log(this.user_id);
         this.rest.increaseLikeCount({tweetId:tweet_id,userId:this.user_id}).subscribe(
             data => console.log(data),
             err => {console.log(err)}

@@ -35,12 +35,17 @@ export class ProfileComponent {
     }
 
     editProfile(){
-    this.router.navigate(['/edit']);
+        this.router.navigate(['/edit']);
     }
 
 
     addFollowers(){
         this.router.navigate(['/home/follow']);
+    }
+
+    changePP() {
+        let $editPP = document.getElementById('editPP');
+        console.log($editPP);
     }
 
     ngOnInit(): void {

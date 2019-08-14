@@ -44,9 +44,12 @@ export class EditProfileComponent {
         if(this.user_status != this.user_status_old) body.userStatus = this.user_status;
         if(this.user_email != this.user_email_old) body.userEmail = this.user_email;
 
-<<<<<<< HEAD
+
         this.rest.updateProfile(body).subscribe(
             data => {
+                if(this.user_email != this.user_email_old) {
+                    localStorage.setItem('user_email',this.user_email);
+                }
                 console.log(data);
                 this.router.navigate(['/home']);
             },
@@ -54,29 +57,6 @@ export class EditProfileComponent {
                 console.log(error);
             }
         );
-=======
-        if (this.user_dob == null) {
-            let new_formated_date = (this.temp_dob.getFullYear()) + "-" + (this.temp_dob.getMonth()+1 )+"-"+(this.temp_dob.getDate());
-            console.log(new_formated_date);
-            
-            let body2 ={
-                userId: user_id,
-                user_status : this.user_status,
-                user_dob : new_formated_date,
-                user_email : this.user_email
-            }
-            this.rest.edit_p(body2).subscribe(
-                data => {
-                    localStorage.setItem('user_email', this.user_email);
-                    console.log(data);
-                    this.router.navigate(['/home']);
-                },
-                error => {
-                    console.log(error);
-                }
-            );
-        }
->>>>>>> b803cb265503a911f0eea33293e9f80bf0dfe578
     }
 
     ngOnInit(): void {

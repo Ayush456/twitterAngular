@@ -13,6 +13,7 @@ export class ProfileComponent {
     user_id = localStorage.getItem('user_id');
     user_tweets:Object;
     userProfile: any;
+    default_img_url = 'https://www.primaryictsupport.co.uk/wp-content/uploads/2017/12/twitter.jpg';
 
     constructor(private rest: RestapiServices, private http: HttpClient, private router: Router) {
 

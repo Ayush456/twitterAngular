@@ -2,11 +2,15 @@
 
 <div class="card shadow-lg bg-white">
     <div>
-        <img src="http://localhost:5000/data/profile_picture/{{user_id}}" alt="" srcset="" >
-        <!-- <form>
-            <label id="editPP_label" for="editPP" class="edit-button">change</label>
-            <input id="editPP" type="file" style="visibility:hidden" name="profile" accept="image/jpeg" (change)="changePP($event.target.files)">
-        </form> -->
+
+        <ng-container *ngIf="user?.ppPath; then thenTemplate; else elseTemplate"></ng-container>
+        <ng-template #thenTemplate>
+                <img src="http://localhost:5000/data/profile_picture/{{user_id}}" alt="" srcset=""style="width: 100%; height: 40vh" >
+        </ng-template>
+        <ng-template #elseTemplate>
+                <img src="{{default_img_url}}" alt="" srcset="" style="width: 100%; height: 40vh">
+        </ng-template>
+      
     </div>
 
     <div class="name-id">
@@ -26,7 +30,7 @@
     </div>
 </div>
 
-<div class="your_tweets">
+<div class="your_tweets" style="">
    <h4 style=" margin-top:12px;font-size: 17px;font-weight: bold">Your Tweets</h4>
     <div id="tw-card" style="margin-bottom: 8px; overflow: auto" class="card shadow" *ngFor="let item of user_tweets">
         <ul style="list-style-type:none ">

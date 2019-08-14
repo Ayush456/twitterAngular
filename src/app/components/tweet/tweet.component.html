@@ -35,7 +35,7 @@
           </ul>
           <ul id="lcs">
               <li><p id=""><button (click)=" increaseLike( feeds.tweetId )"><i class="glyphicon glyphicon-thumbs-up"></i></button>({{ feeds?.likeCount || feeds?.likes }}) &nbsp;&nbsp; &nbsp;</p></li>
-              <li><p id=""><button><i class="glyphicon glyphicon-comment"></i></button>({{feeds?.commentCount || feeds?.comments}}) &nbsp;&nbsp; &nbsp;</p></li>
+              <li><p id=""><button><i class="glyphicon glyphicon-comment"></i></button>({{ feeds?.commentCount || feeds?.comments }}) &nbsp;&nbsp; &nbsp;</p></li>
               <li><p id=""><button><i class="glyphicon glyphicon-share"></i></button>({{feeds?.retweetCount || feeds?.retweets }})</p></li>
               <li><p style="font-size: 12px; color: teal"> Date: {{feeds?.atTime.substring(0,10) }} </p></li>
           </ul>

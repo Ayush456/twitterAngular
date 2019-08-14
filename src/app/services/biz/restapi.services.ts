@@ -77,7 +77,7 @@ export class RestapiServices{
     }
 
     checkIsFollowed(user):Observable<any>{
-        return this.http.get(`http://localhost:5000/data/isfollowed/${user.userOne}/${user.userIdTwo}`);
+        return this.http.get(`http://localhost:5000/data/isfollowing/${user.userOne}/${user.userIdTwo}`);
     }
 
 }

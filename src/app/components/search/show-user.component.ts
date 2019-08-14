@@ -14,6 +14,7 @@ export class ShowUserComponent{
      sp_id:string;
      isFollowed:Boolean;
      other_user:any;
+     default_img_url = 'https://www.primaryictsupport.co.uk/wp-content/uploads/2017/12/twitter.jpg';
     constructor(private route: ActivatedRoute, private rest: RestapiServices){   
     }
 
@@ -33,8 +34,11 @@ export class ShowUserComponent{
 
         this.rest.checkIsFollowed({userOne: this.my_id , userIdTwo: this.sp_id}).subscribe(
             data =>{
-                
-                this.isFollowed = data;
+                if(data == false || data === "" || !data){
+                    this.isFollowed = false;
+                }else{
+                    this.isFollowed = true;
+                }
                 console.log(this.isFollowed);
             },
             err =>{

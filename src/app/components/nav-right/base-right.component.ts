@@ -13,9 +13,9 @@ import $ from 'jquery';
     <div class="nav-right">
     <div class="search-bar">
         <input type="text" [(ngModel)]="search_text" placeholder=" &nbsp; &nbsp;Search Twitter.." (keyup)="searchFunc()" >
-        <div class="search_list">
-           <ul style="list-style-type:none;">
-            <li *ngFor="let s of search_result"> <button style="border:0" (click)="openProfile( s.user_id )" > {{s.user_name}} </button> </li>
+        <div class="search_list" style="overflow:auto;z-index:1;position:absolute;top:10vh;">
+           <ul style="list-style-type:none;width:100%">
+            <li *ngFor="let s of search_result"> <button style="border:0;width:350px;" (click)="openProfile( s.user_id )" > {{s.user_name}} </button> </li>
            </ul> 
         </div>          
     </div>

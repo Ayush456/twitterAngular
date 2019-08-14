@@ -18,6 +18,18 @@ export class ShowUserComponent{
     constructor(private route: ActivatedRoute, private rest: RestapiServices){   
     }
 
+    doUnfollow(other_id){
+        console.log(other_id);
+        this.rest.doUnfollow({userOne:this.my_id,userTwo:other_id}).subscribe(
+            data =>{
+                console.log(data);
+            },
+            err =>{
+                console.log(err);
+            }
+        );
+    }
+
     addToFollow(user_follow_id){
         console.log(this.my_id+"  "+user_follow_id);
         let body ={

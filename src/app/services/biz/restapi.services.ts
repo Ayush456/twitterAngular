@@ -80,4 +80,8 @@ export class RestapiServices{
         return this.http.get(`http://localhost:5000/data/isfollowing/${user.userOne}/${user.userIdTwo}`);
     }
 
+    doUnfollow(user):Observable<any>{
+        return this.http.post(`http://localhost:5000/user/unfollow`,user);
+    }
+
 }

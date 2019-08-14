@@ -40,12 +40,15 @@ export class EditProfileComponent {
             userDob: this.user_dob_old
         }
 
-        if(this.user_dob && this.user_dob != this.user_dob_old) body.userDob = this.user_dob;
-        if(this.user_status != this.user_status_old) body.userStatus = this.user_status;
-        if(this.user_email != this.user_email_old) body.userEmail = this.user_email;
+        if(this.user_dob && this.user_dob != this.user_dob_old) { body.userDob = this.user_dob; }
+        if(this.user_status != this.user_status_old) { body.userStatus = this.user_status; }
+        if(this.user_email != this.user_email_old) { body.userEmail = this.user_email; }
 
-        this.rest.updateProfile(body).subscribe(
+        this.rest.updateProfile(body).subscribe (
             data => {
+                if(this.user_email != this.user_email_old) {
+                    localStorage.setItem('user_email',this.user_email);
+                }
                 console.log(data);
                 this.router.navigate(['/home']);
             },

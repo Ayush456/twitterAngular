@@ -40,10 +40,10 @@
             </li>
             <li style="float: right;margin-right: 40px;overflow: auto"><div *ngIf="isFollowed; then thenT; else elseT"></div>
                 <ng-template #thenT>
-                    <button class="btn btn-danger" (click)="{{my_id}}" >Remove Follow</button>
+                    <button class="btn btn-danger"  >Remove Follow</button>
                 </ng-template>
                 <ng-template #elseT>
-                    <button class="btn btn-success" (click)="{{my_id}}" >Add Follow</button>
+                    <button class="btn btn-success" (click)=" addToFollow( my_id ) " >Add Follow</button>
                 </ng-template>
             </li>
     </ul>

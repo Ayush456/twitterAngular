@@ -18,6 +18,19 @@ export class ShowUserComponent{
     constructor(private route: ActivatedRoute, private rest: RestapiServices){   
     }
 
+    addToFollow(user_follow_id){
+        console.log(this.my_id+"  "+user_follow_id);
+        let body ={
+            userOne: this.my_id,
+            userTwo: user_follow_id,
+        }
+    
+        this.rest.followSomeOne(body).subscribe(
+            data =>{console.log(data);},
+            err =>{ console.log(err);}
+        );
+    }
+
     ngOnInit(): void {
         const id = this.route.snapshot.paramMap.get('id');
         this.sp_id = id;

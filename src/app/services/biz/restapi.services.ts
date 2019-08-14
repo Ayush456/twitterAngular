@@ -70,11 +70,17 @@ export class RestapiServices{
         return this.http.post('http://localhost:5000/user/follow',user);
     }
 
+<<<<<<< HEAD
     editPP(userId,formData):Observable<any>{
         return this.http.post('http://localhost:5000/user/edit_pp',{userId:userId,upload:formData},{
             headers: {'Content-Type':'multipart/form-data;boundary=--------------------------098609406387336135519231'}
         });
     }
 
+=======
+    checkIsFollowed(user):Observable<any>{
+        return this.http.get(`http://localhost:5000/data/isfollowing/${user.userOne}/${user.userIdTwo}`);
+    }
+>>>>>>> b803cb265503a911f0eea33293e9f80bf0dfe578
 
 }

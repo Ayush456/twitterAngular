@@ -59,3 +59,7 @@
 .trendHashtag {
     font-size: 20px;
 }
+
+#search_ul{
+    list-style-type: none;
+}

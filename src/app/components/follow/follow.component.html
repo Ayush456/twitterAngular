@@ -2,7 +2,7 @@
     <h3>Enter Name to follow</h3>
     <input id="search_follow" type="text" id="follow_name" [(ngModel)]="follow_name">
     <br>
-    <button (click)="findFollow()">Find</button>
+    <button class="btn btn-primary" (click)="findFollow()">Find</button>
 </div>
 <div class="follow-list">
     <h3>Here are followers Search result</h3>
@@ -15,6 +15,5 @@
             <li><button value="{{item.user_id}}" (click)="addToFollow( item.user_id )">Follow</button></li>
         </ul>
     </div>
-   
 
 </div>

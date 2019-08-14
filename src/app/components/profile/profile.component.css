@@ -73,11 +73,17 @@ h5{
     padding: 8px;
 }
 
-#tw-card:hover{
+#tw-card:hover {
     transform: scale(1.1) ; 
 }
 
-.edit-button {
+#editPP_label {
+    width:50px;
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    color: rgb(211, 53, 53);
+    background: white;
     position : absolute;
     top : 60%;
     left : 90%;

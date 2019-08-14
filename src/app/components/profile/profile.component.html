@@ -2,9 +2,11 @@
 
 <div class="card shadow-lg bg-white">
     <div>
-        <img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="ERROR" srcset="" >
-        <label for="editPP" class="edit-button" style="color: red">change</label>
-        <input id="editPP" style="visibility:hidden" type="file" name="example.jpeg" accept="image/jpeg" (change)="changePP()">
+        <img src="http://localhost:5000/data/profile_picture/{{user_id}}" alt="" srcset="" >
+        <!-- <form>
+            <label id="editPP_label" for="editPP" class="edit-button">change</label>
+            <input id="editPP" type="file" style="visibility:hidden" name="profile" accept="image/jpeg" (change)="changePP($event.target.files)">
+        </form> -->
     </div>
 
     <div class="name-id">

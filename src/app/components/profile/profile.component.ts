@@ -12,6 +12,7 @@ export class ProfileComponent {
     user: any;
     user_id = localStorage.getItem('user_id');
     user_tweets:Object;
+    userProfile: any;
 
     constructor(private rest: RestapiServices, private http: HttpClient, private router: Router) {
 
@@ -43,10 +44,32 @@ export class ProfileComponent {
         this.router.navigate(['/home/follow']);
     }
 
-    changePP() {
-        let $editPP = document.getElementById('editPP');
-        console.log($editPP);
-    }
+    // changePP(files : FileList) {
+    //     console.log(files);
+    //     console.log("Hi");
+    //     this.userProfile = files.item(0);
+    //     console.log(this.userProfile);
+    //     let formData = new FormData();
+    //     formData.append('files',this.userProfile,this.userProfile.name);
+    //     console.log(formData);
+    //     this.rest.editPP(this.user_id,formData).subscribe (
+    //         data => console.log(data),
+    //         err => console.log(err)
+
+    //     )
+
+    //     // const editPP = document.getElementById('editPP');
+    //     // const newProfile = (<HTMLInputElement>editPP).files[0]; 
+    //     // console.log(newProfile);
+    //     // this.rest.editPP(this.user_id,newProfile).subscribe (
+    //     //     data => {
+    //     //         console.log(data);
+    //     //     },
+    //     //     err => {
+    //     //         console.log(err);
+    //     //     }
+    //     // )
+    // }
 
     ngOnInit(): void {
         this.rest.getInfo(this.user_id).subscribe(  //getting the user personal details
@@ -63,7 +86,6 @@ export class ProfileComponent {
             data=>{console.log(data); this.user_tweets = data },
             err=>{ console.log(err)}
         );
-
     }
 
 }

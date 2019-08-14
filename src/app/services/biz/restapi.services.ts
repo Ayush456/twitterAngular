@@ -70,4 +70,11 @@ export class RestapiServices{
         return this.http.post('http://localhost:5000/user/follow',user);
     }
 
+    editPP(userId,formData):Observable<any>{
+        return this.http.post('http://localhost:5000/user/edit_pp',{userId:userId,upload:formData},{
+            headers: {'Content-Type':'multipart/form-data;boundary=--------------------------098609406387336135519231'}
+        });
+    }
+
+
 }

@@ -42,7 +42,12 @@ export class BaseLeftComponent{
             gi = index
             console.log(gi);
 
-            console.log($('#ks li').attr('color','white'));
+            for(let i=0;i<8;i++){
+                console.log($(`#ks li:eq(${i}) button`).css('color','black')); 
+            }
+
+            console.log($(`#ks li:eq(${index}) button`).css('color','#5DADE2 '));
+
 
             //$('li').eq(gi).addClass('active');
             //let all_li = document.getElementById('ks').getElementsByTagName('li');
